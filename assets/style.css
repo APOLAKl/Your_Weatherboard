@@ -1,0 +1,9 @@
+#current-weather {
+  display: flex;
+  justify-content: center;
+}
+
+
+#forecast-weather {
+  display: flex;
+}
