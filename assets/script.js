@@ -1,5 +1,3 @@
-// "use strict"
-
 // http://api.openweathermap.org/geo/1.0/direct?q={city name},{state code},{country code}&limit=1&appid=921a08915bb8bf79b4345969a767d7a7
 
 // api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid=921a08915bb8bf79b4345969a767d7a7
@@ -17,7 +15,7 @@ function getWeather(event) {
   var currentWeatherURL =
     "https://api.openweathermap.org/data/2.5/weather?q=" +
     searchInput.val() +
-    "&appid=921a08915bb8bf79b4345969a767d7a7";
+    "&appid=921a08915bb8bf79b4345969a767d7a7&units=metric";
 
   fetch(currentWeatherURL)
     .then((res) => res.json())
@@ -63,7 +61,7 @@ function getForecast() {
   var forecastWeatherURL =
     "https://api.openweathermap.org/data/2.5/forecast?q=" +
     searchInput.val() +
-    "&appid=921a08915bb8bf79b4345969a767d7a7";
+    "&appid=921a08915bb8bf79b4345969a767d7a7&units=metric";
 
   fetch(forecastWeatherURL)
     .then((res) => res.json())
