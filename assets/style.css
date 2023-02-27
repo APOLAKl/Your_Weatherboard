@@ -6,4 +6,10 @@
 
 #forecast-weather {
   display: flex;
+  justify-content: center;
+}
+
+#banner {
+  display: flex;
+  justify-content: center;
 }
