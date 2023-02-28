@@ -1,10 +1,4 @@
-// http://api.openweathermap.org/geo/1.0/direct?q={city name},{state code},{country code}&limit=1&appid=921a08915bb8bf79b4345969a767d7a7
-
-// api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid=921a08915bb8bf79b4345969a767d7a7
-
 // apikey = 921a08915bb8bf79b4345969a767d7a7
-
-// https://api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}
 
 var searchForm = $("#search-form");
 var searchInput = $("#search-input");
@@ -48,6 +42,7 @@ function getWeather(event) {
     });
 }
 
+// TODAY FORECAST
 function showCurrentWeather(cityName, date, temp, humidity, windSpeed, icon) {
   $("#current-weather").empty()
   var cardDiv = $("<div>");
@@ -70,7 +65,6 @@ function showCurrentWeather(cityName, date, temp, humidity, windSpeed, icon) {
   $("#current-weather").append(cardDiv);
 }
 
-// 5 DAY FORECAST
 function getForecast() {
   var forecastWeatherURL =
     "https://api.openweathermap.org/data/2.5/forecast?q=" +
@@ -82,7 +76,7 @@ function getForecast() {
     .then((data) => {
       console.log(data);
 
-      // activate showForecastWeather
+      // activate 5 day showForecastWeather
       showForecastWeather([
         data.list[0],
         data.list[8],

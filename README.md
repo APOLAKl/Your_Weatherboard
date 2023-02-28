@@ -15,7 +15,7 @@ A simple Weather forecaster that you can rely on starting with the weather today
 
 ## Screenshots
 
-![Weather Dashboard Screenshot](https://raw.githubusercontent.com/APOLAKl/xx.jpg)
+![Weather Dashboard Screenshot](https://github.com/APOLAKl/Your_Weatherboard/blob/master/assets/WeatherSS.jpg)
 
 
 ## Features
@@ -24,10 +24,11 @@ A simple Weather forecaster that you can rely on starting with the weather today
 * Javascript
 * DayJS
 * Jquery
+* Bootstrap
 
 
 ## 🔗Link to Deployed Page URL
-https://apolakl.github.io/CHAD_WorkDayScheduler/
+https://apolakl.github.io/Your_Weatherboard/
 
 ## 🔗 Link to GitHub Repo Page
-https://github.com/APOLAKl/CHAD_WorkDayScheduler  [![APOLAKl Repo Page](https://img.shields.io/github/stars/APOLAKl/CHAD_WorkDayScheduler?style=social)](https://github.com/APOLAKl/CHAD_WorkDayScheduler)
+https://github.com/APOLAKl/Your_Weatherboard  [![APOLAKl Repo Page](https://img.shields.io/github/stars/APOLAKl/Your_Weatherboard?style=social)](https://github.com/APOLAKl/Your_Weatherboard)
