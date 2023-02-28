@@ -8,9 +8,23 @@
 
 var searchForm = $("#search-form");
 var searchInput = $("#search-input");
+var searchHistory = $("#city-list");
 
 function getWeather(event) {
   event.preventDefault();
+
+  // logs searched cities
+  var searchItem = $("#search-input").val();
+
+  if (!searchItem) {
+    console.log('No search entered!');
+    return;
+  }
+
+  searchHistory.append('<li>' + searchItem + '</li>');
+
+
+
 
   var currentWeatherURL =
     "https://api.openweathermap.org/data/2.5/weather?q=" +
@@ -46,8 +60,8 @@ function showCurrentWeather(cityName, date, temp, humidity, windSpeed, icon) {
       <img src="http://openweathermap.org/img/wn/${icon}@2x.png"/>
     </h5>
     <ul class="list-group list-group-flush">
-      <li class="list-group-item">Temp: ${temp}</li>
-      <li class="list-group-item">Humidity: ${humidity}</li>
+      <li class="list-group-item">Temp: ${temp}°C</li>
+      <li class="list-group-item">Humidity: ${humidity}%</li>
       <li class="list-group-item">Wind Speed: ${windSpeed}</li>
     </ul>
   </div>
@@ -81,19 +95,21 @@ function getForecast() {
 
 function showForecastWeather(weatherArray) {
   $("#forecast-weather").empty()
+  $("#forecast-weather-title").append('5 Day weather forecast');
 
   for(i = 0; i < weatherArray.length; i++) {
     var cardDiv = $("<div>");
     cardDiv.addClass("card");
     cardDiv.html(`
+    
     <div class="card-body">
       <h5 class="card-title">
         <span>${dayjs(weatherArray[i].dt * 1000).format("MM/DD/YYYY")}</span>
         <img src="http://openweathermap.org/img/wn/${weatherArray[i].weather[0].icon}@2x.png"/>
       </h5>
       <ul class="list-group list-group-flush">
-        <li class="list-group-item">Temp: ${weatherArray[i].main.temp}</li>
-        <li class="list-group-item">Humidity: ${weatherArray[i].main.humidity}</li>
+        <li class="list-group-item">Temp: ${weatherArray[i].main.temp}°C</li>
+        <li class="list-group-item">Humidity: ${weatherArray[i].main.humidity}%</li>
         <li class="list-group-item">Wind Speed: ${weatherArray[i].wind.speed}</li>
       </ul>
     </div>
